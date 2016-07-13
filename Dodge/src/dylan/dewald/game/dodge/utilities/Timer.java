@@ -17,7 +17,9 @@ public class Timer implements Runnable{
 		}
 		//Constructor 2
 		public Timer(Event event){
+			//Definetly need to change this error vvvvvvvv
 			super();
+			//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 			setNewEvent(event);
 		}
 		/**
