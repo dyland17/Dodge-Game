@@ -13,12 +13,12 @@ public class RainSquare extends Squares{
 			widthOfTravel  =(int) (x - 10);
 			switch(rs){
 				case SLOW:
-					xSpeed = -0.75;
-					ySpeed = 0.75;
+					xSpeed = -1.0;
+					ySpeed = 1.0;
 				break;
 				case FAST:
-					xSpeed = -1.25;
-					ySpeed = 2.25;
+					xSpeed = -1.0;
+					ySpeed = 2.0;
 			}
 	}
 
@@ -29,9 +29,7 @@ public class RainSquare extends Squares{
 		//RainSquare code
 		y += ySpeed;
 		x += xSpeed;
-		x = Math.round(x);
-		y = Math.round(y);
-		System.out.println("Yspeed: "+ ySpeed );
+		//System.out.println("Yspeed: "+ ySpeed );
 		if(x <= widthOfTravel){
 			xSpeed *= -1;
 		}
