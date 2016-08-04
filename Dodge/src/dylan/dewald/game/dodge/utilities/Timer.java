@@ -15,13 +15,6 @@ public class Timer implements Runnable{
 				new Thread(this, "Watch").start();
 				
 		}
-		//Constructor 2
-		public Timer(Event event){
-			//Definetly need to change this error vvvvvvvv
-			super();
-			//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-			setNewEvent(event);
-		}
 		/**
 		 * @param-event This spawns new enemies squares.
 		 */
