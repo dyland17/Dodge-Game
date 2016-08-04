@@ -26,7 +26,7 @@ public class Start implements Runnable{
 	//Game utilities
 	private SquareHandler squares;
 	private Container c;
-	private Timer eventTimer;
+	public static Timer eventTimer = new Timer();
 	public Start(){
 		Dimension frameDim = new Dimension(screenWidth,screenHeight);
 		//initiating variables
@@ -79,8 +79,7 @@ public class Start implements Runnable{
 		//IMPORTANT=====@s.n. waveFactory will add new events to Timer. 
 		Thread gameThread = new Thread(this,"Game");
 		gameThread.start();
-		eventTimer = new Timer();
-		WaveFactory.Wave1(eventTimer);
+		WaveFactory.Wave1();
 	}
 	/**
 	 * @category-GameLoop
@@ -129,12 +128,6 @@ public class Start implements Runnable{
 	}
 	public void updateTimer(){
 			screen.getTimer().update();
-	}
-	public Timer getEventTimer(){
-		if(eventTimer != null)
-			return eventTimer;
-		else
-			return null;
 	}
 	public SquareHandler getSquareHandler(){
 		return squares;

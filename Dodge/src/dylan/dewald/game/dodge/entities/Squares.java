@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Squares {
 	//variables
 	protected double x, y;
-	protected double xSpeed, ySpeed;
+	protected int xSpeed, ySpeed;
 	private Object key;
 	//Final variables
 	protected final int width = 26, height = 26;
@@ -57,6 +57,14 @@ public class Squares {
 			ex.printStackTrace();
 		}
 	}
+	public int getySpeed() {
+		return ySpeed;
+	}
+
+	public void setySpeed(int ySpeed) {
+		this.ySpeed = ySpeed;
+	}
+
 	private ArrayList<FadeSquare> getTrailSquares(){
 		synchronized(key){
 			if(!removeSquares.isEmpty()){

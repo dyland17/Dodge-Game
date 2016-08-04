@@ -20,14 +20,15 @@ public class SquareHandler {
 	
 	public void update() {
 		int size = squares.size();
-		for(int i = 0;i < size; i++)
+		for(int i = 0;i < size; i++){
 			squares.get(i).move();
+		}
 		addNewEnemies();
 		
 	}
 
 	private void addNewEnemies() {
-		ArrayList<Event> addEnemy = game.getEventTimer().getEventList();
+		ArrayList<Event> addEnemy = Start.eventTimer.getEventList();
 		if(!addEnemy.isEmpty()){
 			for(int i = 0; i < addEnemy.size(); i++){
 				if(addEnemy.get(i).getTimeReached() == true){

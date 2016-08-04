@@ -13,12 +13,12 @@ public class RainSquare extends Squares{
 			widthOfTravel  =(int) (x - 10);
 			switch(rs){
 				case SLOW:
-					xSpeed = -1.0;
-					ySpeed = 1.0;
+					xSpeed = -1;
+					ySpeed = 1;
 				break;
 				case FAST:
-					xSpeed = -1.0;
-					ySpeed = 2.0;
+					xSpeed = -1;
+					ySpeed = 2;
 			}
 	}
 

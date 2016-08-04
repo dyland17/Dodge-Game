@@ -15,8 +15,8 @@ public class DiagnolSquare extends Squares{
 		//Color established
 		myColor = Color.blue;
 		//Starting Direction of DiagnolSquare
-		xSpeed = 1.25;
-		ySpeed = 1.25;
+		xSpeed = 1;
+		ySpeed = 1;
 		startDirection = dd;
 		
 		switch(startDirection){

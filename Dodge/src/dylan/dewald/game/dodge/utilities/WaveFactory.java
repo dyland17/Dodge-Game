@@ -8,16 +8,28 @@ import dylan.dewald.game.dodge.enums.DiagnolDirection;
 import dylan.dewald.game.dodge.enums.RainSpeed;
 
 public class WaveFactory {
-	public static void Wave1(Timer timer){
+	private static double secInterval;
+	public static void Wave1(){
 		double endpoint = 9.5 * 40;
-		double lastSecond = 9.5+(9.5 *.25);
-		for(double i = .5; i < 10; i += .50)
-			timer.setNewEvent(new Event(i+.25, new RainSquare(i*40,50, RainSpeed.FAST)));
-		
-		for(double x = .5; x < 10; x += .50){
-			lastSecond += .25;
-			timer.setNewEvent(new Event(lastSecond, new RainSquare((endpoint - (x*40)),50, RainSpeed.FAST)));
+		double lastSecond = 0.0;
+		secInterval = .50;
+		for(double i = .5; i < 10; i += .50){
+			lastSecond += secInterval;
+			Start.eventTimer.setNewEvent(new Event(lastSecond, new RainSquare( i*45,50, RainSpeed.FAST)));
 		}
+		for(double x = .5; x < 10; x += .50){
+			lastSecond += secInterval;
+			Start.eventTimer.setNewEvent(new Event(lastSecond, new RainSquare((endpoint - (x*42)),50, RainSpeed.FAST)));
+		}
+		secInterval = 0.0;
+		int spaceOffset = 40;
+		for(int n = 1; n <= 5; n++){
+			lastSecond += secInterval;
+			Start.eventTimer.setNewEvent(new Event(lastSecond, new DiagnolSquare(n,spaceOffset*n, DiagnolDirection.DOWNRIGHT)));
+			Start.eventTimer.setNewEvent(new Event(lastSecond, new DiagnolSquare(n,(spaceOffset*n)+40,DiagnolDirection.UPRIGHT)));
+		}
+			
+		
 	}
 	public static void Wave1(ArrayList<Squares> list){
 		DiagnolSquare enemy = new DiagnolSquare(50,200,DiagnolDirection.DOWNLEFT);
